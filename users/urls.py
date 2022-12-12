@@ -8,3 +8,4 @@ urlpatterns= [
     path('logout/', logout_then_login, name='logout'),
 
 ]
+

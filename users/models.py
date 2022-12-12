@@ -9,4 +9,7 @@ class ProjectRegister(models.Model):
     url = models.URLField(max_length=30)
     image = models.ImageField(upload_to='portfolio/images')
 
+    def __str__(self):
+        return self.title
+
 

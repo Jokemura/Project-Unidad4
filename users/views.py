@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views.generic import CreateView
 from django.shortcuts import redirect
 from .forms import NewUserForm
+from .models import ProjectRegister
 
 # Create your views here.
 class RegisterView(CreateView):
@@ -11,3 +12,7 @@ class RegisterView(CreateView):
   def form_valid(self, form):
       form.save()
       return redirect('login')
+
+def home(request):
+    projects = ProjectRegister.objects.all()
+    return render(request, 'index.html', {'projects': projects})
